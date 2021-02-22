@@ -21,15 +21,15 @@ function adequateWaterTracker(calendar) {
   let water = 0;
   let waterWeek = 0
   for (let i = 0; i < calendar.length; i++) {
-    debugger
+     
     const week = calendar[i];
     noWater = 0
     water = 0
     for (let j = 0; j < week.length; j++) {
-      debugger
+       
       const day = week[j];
       if (day === 0) {
-        debugger
+         
         noWater++;
       } else {
         water++;
