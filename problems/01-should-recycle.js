@@ -12,9 +12,12 @@ return `Recycle Me!`
 
 */
 
+// if plastic and not black - recycle me
+// black - cannot currently be recycled
+// aluminum or paper - recycle me
 
 function shouldRecycle(item) {
-  if (!item.plastic) {
+  if (item.plastic && item.color !== 'black') {
     return 'Recycle Me!'
   } else if (item.color === 'black') {
     return 'Currently, cannot be recycled.'
@@ -56,7 +59,7 @@ console.log(shouldRecycle(saladContainer)); // 'Currently, cannot be recycled.'
 
 const styrofoamContainer = {
   plastic: false,
-  color: 'black',
+  color: 'white',
   aluminum: false,
   paper: false
 };
