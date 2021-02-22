@@ -19,18 +19,30 @@ then return true. Otherwise, return false.
 function adequateWaterTracker(calendar) {
   let noWater = 0;
   let water = 0;
+  let waterWeek = 0
   for (let i = 0; i < calendar.length; i++) {
+    debugger
     const week = calendar[i];
-    for (let j = 0; j < week.length - 1; j++) {
-      const day = calendar[j];
+    noWater = 0
+    water = 0
+    for (let j = 0; j < week.length; j++) {
+      debugger
+      const day = week[j];
       if (day === 0) {
+        debugger
         noWater++;
       } else {
         water++;
       }
     }
+    if (noWater < water) {
+      waterWeek++
+    }
   }
-  return noWater < water;
+  if (waterWeek === calendar.length) {
+    return true
+  }
+  return false
 }
 
 const calendar1 = [
